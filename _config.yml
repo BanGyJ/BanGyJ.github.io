@@ -1,125 +1,109 @@
-# ---------------- #
-#   Main Configs   #
-# ---------------- #
-baseurl:
-url: https://mazhuang.org
-date_format: "ordinal"
-title: 码志
-subtitle: "公众号：闷骚的程序员"
-description: "马壮的个人博客，公众号：闷骚的程序员"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
-timezone: Asia/Shanghai
-encoding: "utf-8"
-side_bar_repo_limit: 5
+# Site settings
+title: 博客初号机-X0X #你博客的标题
+SEOTitle: 博客初号机-X0X #显示在搜索引擎上的标题
+header-img: img/home-bg.jpg #显示在首页的背景图片
+email: bgyjgs@gmail.com
+description: "" #网站介绍
+keyword: "博客, 个人网站, 互联网, Android, JavaScript, Java, Kotlin" #关键词
+url: "https://github.x0x.fun" # 这个就是填写你的博客地址
+baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
-# ---------------- #
-#      Author      #
-# ---------------- #
-author: Zhuang Ma
-organization: 
-organization_url: 
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+#用将来的日期发布文章
+# Publish posts or collection documents with a future date.
+future: true
 
-# ---------------- #
-#    Navigation    #
-# ---------------- #
-navs:
-  -
-    href: /
-    label: 首页
+# SNS settings 社交账号
+RSS: false
+# weibo_username:     huxpro
+# zhihu_username:     huxpro
+github_username: BanGyJ
+# twitter_username:   huxpro
+#facebook_username:  huxpro
+#linkedin_username:  firstname-lastname-idxxxx
 
-  -
-    href: /categories/
-    label: 分类
+# Build settings 编译
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude:
+  [
+    "less",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "README.zh.md",
+    "Gemfile",
+  ]
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN
 
-#   -
-#     href: /archives/
-#     label: 归档
 
-  -
-    href: /wiki/
-    label: 维基
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
 
-  -
-    href: /links/
-    label: 链接
-
-  -
-    href: /about/
-    label: 关于
-
-# ---------------- #
-#       RSS        #
-# ---------------- #
-subscribe_rss: /feed.xml
-
-# ---------------- #
-#      Jekyll      #
-# ---------------- #
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-    input: GFM
-highlighter: rouge
-paginate: 10
-lsi: false
-quiet: false
-excerpt_separator: "\n\n"
-permalink: /:year/:month/:day/:title/
-gems:
-    - jekyll-github-metadata
-    - rouge
-#     - jekyll-html-pipeline
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
-#     - jekyll-mentions
-collections:
-    wiki:
-        output: true
-        permalink: /wiki/:path/
+  input: GFM # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
-repository: mzlogin/mzlogin.github.io
+# Disqus settings 评论系统
+# Disqus（https://disqus.com/）
+# disqus_username: hux
 
-# ---------------- #
-#      Comments    #
-# ---------------- #
-# support provider: disqus, gitment, gitalk
-comments_provider: gitalk
-# !!!重要!!! 请修改下面这些信息为你自己申请的
-# !!!Important!!! Please modify infos below to yours
-# https://disqus.com
-disqus:
-    username: 
-# https://imsun.net/posts/gitment-introduction/
-gitment:
-    owner: mzlogin
-    repo: blog-comments
-    oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# https://github.com/gitalk/gitalk#install
+#gitalk https://github.com/gitalk/gitalk
 gitalk:
-    owner: mzlogin
-    repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# 在使用其它评论组件时可点击显示 Disqus
-lazy_load_disqus : false
+  enable: true #是否开启Gitalk评论
+  clientID: 95fe321e6b2fc65c46c3 #生成的clientID
+  clientSecret: aea0ec3b5c3e7f6697431a6111130adf3df1e250 #生成的clientSecret
+  repo: BanGyJ.github.io #仓库名称
+  owner: BanGyJ #github用户名
+  admin: BanGyJ
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
-# ---------------- #
-#      Search      #
-# ---------------- #
-simple_jekyll_search:
-    # 是否支持全文搜索
-    fulltext: false
-    # 最多显示多少条搜索结果
-    limit: 10
+# Netease settings
+# netease_comment: false
 
-# ---------------- #
-#    Analytics     #
-# ---------------- #
-google:
-    analytics_id: UA-80669434-1
+# Analytics settings 网站统计
+# Baidu Analytics
+ba_track_id: 19e3c81f0674750dabf76982b06eceb4
+
+# Google Analytics
+# ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
+
+#侧边栏.
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "没关系的，都一样"
+sidebar-avatar: /img/avatar-x0x.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+# Friends 好友链接部分
+friends: [{ title: "Google", href: "https://developer.android.google.cn/" }]
